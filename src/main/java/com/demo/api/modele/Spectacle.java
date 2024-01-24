@@ -1,5 +1,8 @@
 package com.demo.api.modele;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Spectacle {
 
     private Integer id;
@@ -28,6 +31,12 @@ public class Spectacle {
 
     public void setHoraire(String horaire) {
         this.horaire = horaire;
+    }
+
+    public LocalDate getDate() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return LocalDate.parse(horaire, formatter);
     }
 
 }
